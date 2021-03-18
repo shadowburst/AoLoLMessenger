@@ -16,6 +16,6 @@ export default class Conversation extends Observable {
     this.messages.push(message);
 
     // Notifier les observeurs de l'évènement
-    this.notifyObservers();
+    this.notifyObservers(message);
   }
 }

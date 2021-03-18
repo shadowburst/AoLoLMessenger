@@ -18,7 +18,7 @@ export default class Observable implements IObservable {
     }
   }
 
-  notifyObservers(): void {
-    this.observers.forEach((o) => o.update(this));
+  notifyObservers(content: any): void {
+    this.observers.forEach((o) => o.update(this, content));
   }
 }
