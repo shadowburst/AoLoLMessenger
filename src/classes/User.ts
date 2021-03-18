@@ -1,4 +1,4 @@
-import { IObservable, IObserver } from "../interfaces";
+import { IObserver } from "../interfaces";
 import Room from "./Room";
 import UserState from "./UserState";
 import UserStateActive from "./UserStateActive";
