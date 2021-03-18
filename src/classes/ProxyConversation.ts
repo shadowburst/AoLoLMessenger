@@ -2,6 +2,8 @@ import Conversation from './Conversation';
 
 export default class ProxyConversation extends Conversation {
   getMessage() {
+    if (this.messages.length === 0) this.load();
+
     return this.messages;
   }
 

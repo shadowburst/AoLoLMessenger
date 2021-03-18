@@ -1,11 +1,18 @@
-import { Conversation } from '.';
+import Conversation from './Conversation';
+import User from './User';
 
 export default class Room {
-  isPrivate: boolean;
-  conversation: Conversation;
+  private isPrivate: boolean;
+  private conversation: Conversation;
+  private users: User[];
 
-  constructor(conversation: Conversation) {
-    this.isPrivate = false;
-    this.conversation = conversation;
+  constructor(isPrivate: boolean, users?: User[]) {
+    this.isPrivate = isPrivate;
+    this.conversation = new Conversation();
+    this.users = users ?? [];
+  }
+
+  getConversation() {
+    return this.conversation;
   }
 }
