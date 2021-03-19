@@ -35,6 +35,12 @@ export default class CompositeElement extends MessageElement {
   }
 
   public format(formatter: IMessageFormatter): MessageElement[] {
-    throw new Error('Method not implemented.');
+    const elements: MessageElement[] = [];
+
+    this.elements.forEach((element: MessageElement) =>
+      elements.push(...element.format(formatter))
+    );
+
+    return elements;
   }
 }

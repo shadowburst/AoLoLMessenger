@@ -13,7 +13,7 @@ export default class Message implements IMessage {
     this.sender = sender;
     this.timestamp = timestamp ?? new Date();
     this.elements = message ? [new TextElement(message)] : [];
-    this.format(MessageBoldFormatter.getInstance())
+    this.format(MessageBoldFormatter.getInstance());
     // this.format(MessageBoldFormatter.getInstance())
   }
 
@@ -38,11 +38,11 @@ export default class Message implements IMessage {
   }
 
   public format(formatter: IMessageFormatter): void {
-    const formattedElements = []
+    const formattedElements = [];
 
     this.elements.forEach((element: MessageElement) => {
-      element.format(formatter);
-    })
+      formattedElements.push(...element.format(formatter));
+    });
   }
 
   public clone(): any {

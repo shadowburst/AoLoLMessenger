@@ -1,4 +1,4 @@
-import { IMessageFormatter } from "../../interfaces";
+import { IMessageFormatter } from '../../interfaces';
 
 export default abstract class MessageElement {
   protected value: string;
@@ -11,5 +11,7 @@ export default abstract class MessageElement {
     return this.value;
   }
 
-  public abstract format(formatter: IMessageFormatter): MessageElement[]
+  public format(formatter: IMessageFormatter): MessageElement[] {
+    return formatter.apply(this);
+  }
 }
