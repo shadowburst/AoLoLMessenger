@@ -40,7 +40,9 @@ export default class Message implements IMessage {
 
   public clone(): any {
     const message = new Message(this.sender, undefined, this.timestamp);
-    message.setElements(this.elements);
+    message.setElements(
+      this.elements.map((element: MessageElement) => element)
+    );
     return message;
   }
 }
