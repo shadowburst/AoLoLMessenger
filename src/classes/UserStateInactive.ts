@@ -11,7 +11,10 @@ export default class UserStateInactive extends UserState {
   private static instance: UserStateInactive | null = null;
 
   public static getInstance(): UserStateInactive {
-    return this.instance ? this.instance : new UserStateInactive();
+    if (!this.instance) {
+      this.instance = new UserStateInactive();
+    }
+    return this.instance;
   }
 
   public update(content: Message, user: User): void {

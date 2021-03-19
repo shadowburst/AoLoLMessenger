@@ -1,3 +1,4 @@
+import { IMessageFormatter } from '../../interfaces';
 import MessageElement from './MessageElement';
 
 export default class ColorElement extends MessageElement {

@@ -1,5 +1,5 @@
-import IMessage from './IMessage';
+import { MessageElement } from '../classes/message';
 
-export default interface IMessageFormatter {
-  apply(message: IMessage): void;
+export default interface IMessageElementFormatter {
+  apply(element: MessageElement): MessageElement;
 }

@@ -1,4 +1,4 @@
-import { Room, User, UserStateActive, UserStateInactive } from './src/classes';
+import { Room, User } from './src/classes';
 
 const user1 = new User('Peter');
 const user2 = new User('Marine');

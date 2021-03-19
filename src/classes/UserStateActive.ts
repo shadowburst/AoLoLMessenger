@@ -11,7 +11,10 @@ export default class UserStateActive extends UserState {
   private static instance: UserStateActive | null = null;
 
   public static getInstance(): UserStateActive {
-    return this.instance ? this.instance : new UserStateActive();
+    if (!this.instance) {
+      this.instance = new UserStateActive();
+    }
+    return this.instance;
   }
 
   public login(user: User): void {
