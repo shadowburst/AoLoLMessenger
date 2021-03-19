@@ -30,7 +30,7 @@ export default abstract class UserState {
   protected printMessage(content: Message, user: User) {
     console.log(
       `Message de ${content
-        .getUser()
+        .getSender()
         .getName()} reçu par ${user.getName()} à ${content.getTimestamp()}:`,
       content.getValue()
     );

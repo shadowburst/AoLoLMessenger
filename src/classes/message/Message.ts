@@ -8,13 +8,13 @@ export default class Message implements IMessage {
   private timestamp: Date;
   private elements: MessageElement[];
 
-  constructor(sender: User, message?: string) {
+  constructor(sender: User, message?: string, timestamp?: Date) {
     this.sender = sender;
-    this.timestamp = new Date();
+    this.timestamp = timestamp ?? new Date();
     this.elements = message ? [new TextElement(message)] : [];
   }
 
-  public getUser(): User {
+  public getSender(): User {
     return this.sender;
   }
 
@@ -30,7 +30,17 @@ export default class Message implements IMessage {
     return this.elements;
   }
 
+  public setElements(elements: MessageElement[]): void {
+    this.elements = elements;
+  }
+
   public format(formatter: IMessageFormatter): void {
     formatter.apply(this);
+  }
+
+  public clone(): any {
+    const message = new Message(this.sender, undefined, this.timestamp);
+    message.setElements(this.elements);
+    return message;
   }
 }
