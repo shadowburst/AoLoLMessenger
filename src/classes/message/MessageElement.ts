@@ -5,7 +5,7 @@ export default abstract class MessageElement {
     this.value = value;
   }
 
-  getValue() {
+  public getValue(): string {
     return this.value;
   }
 }
