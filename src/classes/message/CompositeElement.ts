@@ -1,3 +1,4 @@
+import { IMessageFormatter } from '../../interfaces';
 import MessageElement from './MessageElement';
 
 export default class CompositeElement extends MessageElement {
@@ -31,5 +32,9 @@ export default class CompositeElement extends MessageElement {
     if (index > -1) {
       this.elements.splice(index, 1);
     }
+  }
+
+  public format(formatter: IMessageFormatter): MessageElement[] {
+    throw new Error('Method not implemented.');
   }
 }

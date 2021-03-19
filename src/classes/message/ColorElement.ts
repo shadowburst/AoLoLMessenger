@@ -1,3 +1,4 @@
+import { IMessageFormatter } from '../../interfaces';
 import MessageElement from './MessageElement';
 
 export default class ColorElement extends MessageElement {
@@ -10,5 +11,9 @@ export default class ColorElement extends MessageElement {
 
   public getColor(): string {
     return this.color;
+  }
+
+  public format(formatter: IMessageFormatter): MessageElement[] {
+    throw new Error('Method not implemented.');
   }
 }

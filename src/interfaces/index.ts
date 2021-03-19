@@ -1,6 +1,6 @@
 import IObserver from './IObserver';
 import IObservable from './IObservable';
 import IMessage from './IMessage';
-import IMessageFormatter from './IMessageFormatter';
+import IMessageElementFormatter from './IMessageFormatter';
 
-export { IObservable, IObserver, IMessage, IMessageFormatter };
+export { IObservable, IObserver, IMessage, IMessageElementFormatter as IMessageFormatter };

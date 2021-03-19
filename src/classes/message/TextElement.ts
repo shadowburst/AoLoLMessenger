@@ -1,3 +1,4 @@
+import { IMessageFormatter } from '../../interfaces';
 import MessageElement from './MessageElement';
 
 export default class TextElement extends MessageElement {
@@ -16,5 +17,9 @@ export default class TextElement extends MessageElement {
 
   public getIsItalic(): boolean {
     return this.isItalic;
+  }
+
+  public format(formatter: IMessageFormatter): MessageElement[] {
+    return formatter.apply(this)
   }
 }

@@ -1,5 +1,6 @@
 import { User } from '..';
 import { IMessage, IMessageFormatter } from '../../interfaces';
+import { MessageBoldFormatter } from './formatter';
 import MessageElement from './MessageElement';
 import TextElement from './TextElement';
 
@@ -12,6 +13,8 @@ export default class Message implements IMessage {
     this.sender = sender;
     this.timestamp = timestamp ?? new Date();
     this.elements = message ? [new TextElement(message)] : [];
+    this.format(MessageBoldFormatter.getInstance())
+    // this.format(MessageBoldFormatter.getInstance())
   }
 
   public getSender(): User {
@@ -35,14 +38,16 @@ export default class Message implements IMessage {
   }
 
   public format(formatter: IMessageFormatter): void {
-    formatter.apply(this);
+    const formattedElements = []
+
+    this.elements.forEach((element: MessageElement) => {
+      element.format(formatter);
+    })
   }
 
   public clone(): any {
     const message = new Message(this.sender, undefined, this.timestamp);
-    message.setElements(
-      this.elements.map((element: MessageElement) => element)
-    );
+    message.setElements(this.elements);
     return message;
   }
 }
