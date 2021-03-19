@@ -7,18 +7,22 @@ export default class Observable implements IObservable {
     this.observers = [];
   }
 
-  addObserver(o: IObserver): void {
+  public getObservers() {
+    return this.observers;
+  }
+
+  public addObserver(o: IObserver): void {
     this.observers.push(o);
   }
 
-  deleteObserver(o: IObserver): void {
+  public deleteObserver(o: IObserver): void {
     const index = this.observers.indexOf(o);
     if (index > -1) {
       this.observers.splice(index, 1);
     }
   }
 
-  notifyObservers(content: any): void {
+  public notifyObservers(content: any): void {
     this.observers.forEach((o) => o.update(this, content));
   }
 }

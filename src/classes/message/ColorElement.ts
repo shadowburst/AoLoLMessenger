@@ -8,7 +8,7 @@ export default class ColorElement extends MessageElement {
     this.color = color;
   }
 
-  getColor() {
+  public getColor(): string {
     return this.color;
   }
 }

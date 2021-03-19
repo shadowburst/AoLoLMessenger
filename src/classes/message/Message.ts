@@ -14,19 +14,19 @@ export default class Message implements IMessage {
     this.elements = message ? [new TextElement(message)] : [];
   }
 
-  getUser() {
+  public getUser(): User {
     return this.sender;
   }
 
-  getTimestamp() {
+  public getTimestamp(): Date {
     return this.timestamp;
   }
 
-  getElements() {
+  public getElements(): MessageElement[] {
     return this.elements;
   }
 
-  format(formatter: IMessageFormatter): void {
+  public format(formatter: IMessageFormatter): void {
     formatter.apply(this);
   }
 }

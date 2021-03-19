@@ -10,11 +10,11 @@ export default class TextElement extends MessageElement {
     this.isItalic = isItalic || false;
   }
 
-  getIsBold() {
+  public getIsBold(): boolean {
     return this.isBold;
   }
 
-  getIsItalic() {
+  public getIsItalic(): boolean {
     return this.isItalic;
   }
 }
