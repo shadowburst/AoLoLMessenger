@@ -1,4 +1,3 @@
-import { IMessageFormatter } from '.';
 import { MessageElement } from '../classes/message';
 
 export default interface IMessageElementFormatter {

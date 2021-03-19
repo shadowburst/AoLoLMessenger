@@ -1,5 +1,5 @@
-import { MessageElement } from '..';
-import { IMessage, IMessageFormatter } from '../../../interfaces';
+import { CompositeElement, MessageElement } from '..';
+import { IMessageFormatter } from '../../../interfaces';
 
 export default class MessageBoldFormatter implements IMessageFormatter {
   private constructor() {}

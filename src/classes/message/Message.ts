@@ -1,6 +1,6 @@
 import { User } from '..';
 import { IMessage, IMessageFormatter } from '../../interfaces';
-import { MessageBoldFormatter } from './formatter';
+import { MessageBoldFormatter, MessageItalicFormatter, MessageLinkFormatter } from './formatter';
 import MessageElement from './MessageElement';
 import TextElement from './TextElement';
 
@@ -14,7 +14,8 @@ export default class Message implements IMessage {
     this.timestamp = timestamp ?? new Date();
     this.elements = message ? [new TextElement(message)] : [];
     this.format(MessageBoldFormatter.getInstance());
-    // this.format(MessageBoldFormatter.getInstance())
+    this.format(MessageItalicFormatter.getInstance());
+    this.format(MessageLinkFormatter.getInstance());
   }
 
   public getSender(): User {
