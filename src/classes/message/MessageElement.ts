@@ -11,7 +11,7 @@ export default abstract class MessageElement {
     return this.value;
   }
 
-  public format(formatter: IMessageFormatter): MessageElement[] {
+  public format(formatter: IMessageFormatter): MessageElement {
     return formatter.apply(this);
   }
 }

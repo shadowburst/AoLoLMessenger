@@ -4,7 +4,7 @@ import { IMessageFormatter } from '../../../interfaces';
 export default class MessageLinkFormatter implements IMessageFormatter {
   private constructor() {}
 
-  private static instance: MessageLinkFormatter | null
+  private static instance: MessageLinkFormatter | null;
 
   public static getInstance(): MessageLinkFormatter {
     if (!this.instance) {
@@ -13,8 +13,8 @@ export default class MessageLinkFormatter implements IMessageFormatter {
     return this.instance;
   }
 
-  public apply(message: MessageElement): MessageElement[] {
+  public apply(message: MessageElement): MessageElement {
     console.log('Visité pour les liens');
-    return []
+    return message;
   }
 }

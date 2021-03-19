@@ -1,10 +1,10 @@
-import { CompositeElement, MessageElement } from '..';
+import { MessageElement } from '..';
 import { IMessageFormatter } from '../../../interfaces';
 
 export default class MessageBoldFormatter implements IMessageFormatter {
   private constructor() {}
 
-  private static instance: MessageBoldFormatter | null
+  private static instance: MessageBoldFormatter | null;
 
   public static getInstance(): MessageBoldFormatter {
     if (!this.instance) {
@@ -13,8 +13,8 @@ export default class MessageBoldFormatter implements IMessageFormatter {
     return this.instance;
   }
 
-  public apply(message: MessageElement): MessageElement[] {
+  public apply(message: MessageElement): MessageElement {
     console.log('Visité pour le gras');
-    return []
+    return message;
   }
 }

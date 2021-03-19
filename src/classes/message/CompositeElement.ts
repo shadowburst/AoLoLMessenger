@@ -33,14 +33,4 @@ export default class CompositeElement extends MessageElement {
       this.elements.splice(index, 1);
     }
   }
-
-  public format(formatter: IMessageFormatter): MessageElement[] {
-    const elements: MessageElement[] = [];
-
-    this.elements.forEach((element: MessageElement) =>
-      elements.push(...element.format(formatter))
-    );
-
-    return elements;
-  }
 }

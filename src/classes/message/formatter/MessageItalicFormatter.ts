@@ -4,7 +4,7 @@ import { IMessageFormatter } from '../../../interfaces';
 export default class MessageItalicFormatter implements IMessageFormatter {
   private constructor() {}
 
-  private static instance: MessageItalicFormatter | null
+  private static instance: MessageItalicFormatter | null;
 
   public static getInstance(): MessageItalicFormatter {
     if (!this.instance) {
@@ -13,8 +13,8 @@ export default class MessageItalicFormatter implements IMessageFormatter {
     return this.instance;
   }
 
-  public apply(message: MessageElement): MessageElement[] {
+  public apply(message: MessageElement): MessageElement {
     console.log("Visité pour l'italique");
-    return []
+    return message;
   }
 }
