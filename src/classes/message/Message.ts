@@ -38,11 +38,13 @@ export default class Message implements IMessage {
   }
 
   public format(formatter: IMessageFormatter): void {
-    const formattedElements = [];
+    const formattedElements: MessageElement[] = [];
 
     this.elements.forEach((element: MessageElement) => {
       formattedElements.push(...element.format(formatter));
     });
+
+    this.setElements(formattedElements);
   }
 
   public clone(): any {
