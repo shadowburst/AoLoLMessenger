@@ -1,4 +1,4 @@
-import { IObserver } from "../interfaces";
+import { IObservable, IObserver } from "../interfaces";
 import Room from "./Room";
 import UserState from "./UserState";
 import UserStateActive from "./UserStateActive";
@@ -12,21 +12,21 @@ export default class User implements IObserver {
     private name: string
     private state: UserState
 
-    public update(content: any): void {
+    public update(o: IObservable, content: object): void {
         this.state.update(content, this)
     }
 
-    public getName() {
+    public getName(): string {
         return this.name
     }
 
     public setState(state: UserState): void {
-        this.state = state
+        console.log(`L'utilisateur ${this.name} passe en ${state.getName()}`)
     }
 
     /* comme on n'implémente pas l'interface, la méthode sendMessage
     est publique de manière à pouvoir la déclencher depuis le client */
     public sendMessage(message: string, room: Room) {
-        room.getConversation().sendMessage(message)
+        room.getConversation().sendMessage(message, this)
     }
 }

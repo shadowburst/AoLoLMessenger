@@ -1,6 +1,6 @@
 import { IObservable, IObserver } from '../interfaces';
 
-export default class Observable implements IObservable {
+export default abstract class Observable implements IObservable {
   private observers: IObserver[];
 
   constructor() {

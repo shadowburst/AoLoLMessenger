@@ -23,7 +23,6 @@ export default class Room {
     if (this.isPrivate) {
       console.log('Erreur : cette conversation est privée');
     } else {
-      this.users.push(user);
       this.conversation.addObserver(user);
     }
   }
