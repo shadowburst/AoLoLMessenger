@@ -22,6 +22,10 @@ export default class Message implements IMessage {
     return this.timestamp;
   }
 
+  public getValue(): string {
+    return this.elements.map((element) => element.getValue()).join(' ');
+  }
+
   public getElements(): MessageElement[] {
     return this.elements;
   }
