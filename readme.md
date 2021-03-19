@@ -1,6 +1,6 @@
 # AoLoLMessenger
 
-Une application de messagerie pour le cours de Design Patterns
+A chat application for Design Patterns course
 
 ---
 ## Requirements
