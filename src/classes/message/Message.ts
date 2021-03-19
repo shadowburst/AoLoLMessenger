@@ -23,7 +23,7 @@ export default class Message implements IMessage {
   }
 
   public getValue(): string {
-    return this.elements.map((element) => element.getValue()).join(' ');
+    return this.elements.map((element) => element.getValue()).join('');
   }
 
   public getElements(): MessageElement[] {
